@@ -29,7 +29,7 @@ export function Footer() {
           <ModeToggle />
         </div>
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 items-center">
         <div className="flex flex-row gap-[4rem] max-sm:gap-18 mt-10">
           <div className="flex flex-col gap-5 text-[15px] font-SF text-black dark:text-white">
             <div className="font-semibold">Product</div>
@@ -45,7 +45,7 @@ export function Footer() {
           </div>
         </div>
         <div className="flex flex-row text-[14px] font-SF font-medium text-black dark:text-zinc-400">
-          Copyright © 2023 PomodoroKai.
+          ©2024 PomodoroKai
         </div>
       </div>
     </div>

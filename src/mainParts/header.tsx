@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import headerImg from "../assets/Header.png";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export function Header() {
+  const navigate = useNavigate();
+
   const backgroundImageStyle: React.CSSProperties = {
     backgroundImage: `url(${headerImg})`,
     backgroundSize: "cover",
@@ -24,7 +27,12 @@ export function Header() {
         to create, organize, and manage task lists efficiently.
       </div>
       <div className="mt-7">
-        <Button className="bg-black hover:bg-black px-7 py-3 rounded-xl">
+        <Button
+          onClick={() => {
+            navigate("/login");
+          }}
+          className="bg-black hover:bg-black px-7 py-3 rounded-xl"
+        >
           Try it Now
         </Button>
       </div>

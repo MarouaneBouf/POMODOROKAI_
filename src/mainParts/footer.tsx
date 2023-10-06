@@ -17,6 +17,7 @@ export function Footer() {
     backgroundImage: `url(${logo1})`,
     backgroundSize: "cover",
   };
+
   return (
     <div className="pl-[5rem] pr-[5rem] pb-[2rem] flex flex-row max-sm:flex-col justify-between">
       <div className="flex flex-col items-center justify-between mt-8">

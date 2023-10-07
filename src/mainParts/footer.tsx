@@ -4,7 +4,7 @@ import logo1 from "../assets/Logo_Trans_v1.png";
 import { useTheme } from "@/components/theme-provider"; // Import the useTheme hook
 
 export function Footer() {
-  const { theme } = useTheme(); // Get the theme from the context
+  const { theme } = useTheme();
 
   const logoSizeClass =
     theme === "dark" ? "h-[7rem] w-[7rem]" : "h-[7rem] w-[7rem]";

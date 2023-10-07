@@ -6,19 +6,12 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { supabase } from "../client/supabaseClient";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
-import headerImg from "../assets/Header.png";
-import logoBlack from "../assets/Logo_Trans_v1.png";
 import nyc from "../assets/nyc_1.png";
 
 export function Login() {
   const backgroundImageStyle: React.CSSProperties = {
     backgroundImage: `url(${nyc})`,
     backgroundSize: "cover",
-  };
-
-  const LogoStyle: React.CSSProperties = {
-    backgroundImage: `url(${logoBlack})`,
-    backgroundSize: "contain",
   };
 
   const navigate = useNavigate();
@@ -116,42 +109,3 @@ export function Login() {
     </>
   );
 }
-
-// export function Login() {
-
-//   return (
-//     <div className="flex flex-row font-SF bg-zinc-100 h-screen">
-//       <div className="flex items-center justify-center container mx-auto">
-//         <div className="flex flex-col items-center">
-//           <div className="h-[9rem] w-[9rem]" style={LogoStyle}></div>
-//           <div className="font-medium">Welcome to PomodoroKai.</div>
-//           <div className="font-medium text-[15px] text-gray-500">
-//             One of the best task Management App on the planet.
-//           </div>
-//           <div className="w-[30rem] max-sm:w-[13rem]">
-//             <Auth
-//               socialLayout="horizontal"
-//               supabaseClient={supabase}
-//               appearance={{
-//                 theme: ThemeSupa,
-//                 style: {
-//                   button: {
-//                     backgroundColor: "black",
-//                     color: "whitesmoke",
-//                     border: "none",
-//                   },
-//                 },
-//               }}
-//               providers={["github", "google"]}
-//               redirectTo="https://pomodorokai.vercel.app/work"
-//             />
-//           </div>
-//         </div>
-//       </div>
-//       <div
-//         className="mx-5 mt-5 h-[94vh] w-[90vw] max-sm:hidden rounded-2xl"
-//         style={backgroundImageStyle}
-//       ></div>
-//     </div>
-//   );
-// }

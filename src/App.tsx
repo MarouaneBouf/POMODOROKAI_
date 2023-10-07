@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import { LandingPage } from "./pages/landing_page";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Login } from "./pages/auth";
+import { Login } from "./pages/login";
 
 function App() {
   function PrivateRoute({ element }: RouteProps) {

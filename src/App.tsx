@@ -8,6 +8,7 @@ import {
 import { LandingPage } from "./pages/landing_page";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Login } from "./pages/login";
+import { Dashboard } from "./pages/dashboard";
 
 function App() {
   function PrivateRoute({ element }: RouteProps) {
@@ -23,7 +24,10 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/work" element={<PrivateRoute element={<Login />} />} />
+          <Route
+            path="/dashboard"
+            element={<PrivateRoute element={<Dashboard />} />}
+          />
         </Routes>
       </Router>
     </ThemeProvider>

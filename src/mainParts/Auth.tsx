@@ -28,7 +28,7 @@ export function AuthForm() {
             },
           }}
           providers={["github", "google"]}
-          redirectTo="https://pomodorokai.vercel.app/work"
+          redirectTo="https://pomodorokai.vercel.app/dashboard"
         />
       </div>
     </div>

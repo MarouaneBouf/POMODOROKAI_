@@ -5,18 +5,22 @@ import { useEffect } from "react";
 import { supabase } from "../client/supabaseClient";
 import { AuthForm } from "@/mainParts/Auth";
 import { Background_Login } from "@/mainParts/LoginBackground";
+import { Session } from "@supabase/supabase-js";
 
 export function Login() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const handleAuthStateChange = async (event: string, session: any) => {
+    const handleAuthStateChange = async (
+      event: string,
+      session: Session | null
+    ) => {
       if (event === "SIGNED_IN") {
         try {
           const { data, error } = await supabase
             .from("profiles")
             .select("username")
-            .eq("id", session.user.id);
+            .eq("id", session?.user.id);
 
           if (error) {
             console.error("Error fetching user data:", error);
@@ -24,7 +28,7 @@ export function Login() {
           }
 
           if (data !== null && data?.length > 0 && data[0]?.username !== null) {
-            navigate("/work");
+            navigate("/dashboard");
           } else {
             navigate("/setup");
           }
@@ -33,7 +37,6 @@ export function Login() {
         }
       }
     };
-
     supabase.auth.onAuthStateChange(handleAuthStateChange);
   }, [navigate]);
 
